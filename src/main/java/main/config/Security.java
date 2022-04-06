@@ -48,5 +48,6 @@ public class Security extends WebSecurityConfigurerAdapter{
 	http.authorizeRequests().antMatchers("/login/**").permitAll();
 	http.authorizeRequests().antMatchers(HttpMethod.POST, "/CreerEvaluation").hasRole("guide");
 	//http.authorizeRequests().anyRequest().hasRole("orga");
+	http.authorizeRequests().anyRequest().authenticated();
 	}
 }
