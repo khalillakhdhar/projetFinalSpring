@@ -33,7 +33,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 		.usersByUsernameQuery( // on verifie l'existance de l'élément unique username (email cin, login)
 				"select login as principal ,password, active as credentials from admin where login=?")
 		.authoritiesByUsernameQuery( // on utilise le même paramétre pour récupérer les roles
-				"select admin_login as principal , role_name as role from admin_roles "
+				"select admin_login as principal , roles_role_name as role from admin_roles "
 						+ "where admin_login=?")
 		.passwordEncoder(bCryptPasswordEncoder).rolePrefix("ROLE_"); // encoder le password
 		// chercher le mdp => associer le mot ROLE_ comme prefix pour les roles récupérer

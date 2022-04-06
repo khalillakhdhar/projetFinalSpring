@@ -45,6 +45,7 @@ public class AccountServiceImplement implements AccountService{
 				Role role=roleRepository.findByRoleName(roleName);
 				Admin admin=adminrepository.findByLogin(login);
 				admin.getRoles().add(role);
+				adminrepository.save(admin);
 		
 	}
 
